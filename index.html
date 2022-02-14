@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+   <script>
+       tailwind.config = {
+           darkMode : 'class',
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+            }
+   </script>
+
+   <style type="text/tailwindcss">
+       #toggle:checked ~ label div.toggle-circle {
+           @apply translate-x-4;
+
+       }
+   </style>
+</head>
+<body class="dark:bg-slate-800 dark:text-slate-200">
+    <div class="flex justify-center py-3">
+        <span class="text-sm mr-2">light</span>
+        <input class="hidden" type="checkbox" id="toggle">
+        <label for="toggle">
+            <div class="w-9 h-5 bg-gray-500 flex items-center rounded-full cursor-pointer">
+                <div class="toggle-circle w-4 h-4 rounded-full bg-gray-200 p-1">
+
+                </div>
+            </div>
+        </label>
+        <span class="text-sm ml-2">dark</span>
+    </div>
+    <h1 class="text-center mt-10 font-bold text-2xl">tailwind css</h1>
+
+    <button class="block mx-auto bg-sky-300 px-4 py-2 rounded-full font-semibold text-white hover:bg-sky-500 active:bg-sky-700 focus:ring focus:bg-sky-800 dark:text-slate-100 dark:hover:text-slate-300">simpan</button>
+
+    <div class="max-w-lg my-10 border-2 border-sky-400 rounded-xl mx-auto p-5 shadow-lg hover:bg-blue-400 hover:border-lime-400 group font-serif">
+        <h5 class="text-center text-lg font-bold mb-3 text-slate-700 group-hover:text-white">My Card</h5>
+        <p class=" text-slate-600 group-hover:text-white selection:bg-lime-300 selection:text-black first-line:uppercase first-line:-tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 
+       ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam enim dignissimos aspernatur quia architecto ullam nisi consequuntur, officiis inventore consequatur ea. Maiores incidunt voluptatibus repellat cum doloribus dicta laboriosam veniam.</p>
+    </div>
+
+
+    <div class="max-w-lg my-10 border-2 border-sky-400 rounded-xl mx-auto p-5 shadow-lg hover:bg-blue-400 hover:border-lime-400 group font-serif">
+        <h5 class="text-center text-lg font-bold mb-3 text-slate-700 group-hover:text-white">My Card</h5>
+        <form action="">
+            <label for="email">
+                <span class="after:content-['*'] after:text-pink-500 after:ml-1">E-mail</span>
+                <input class="px-3 py-2 border shadow-lg rounded-full w-full block text-sm focus:outline-none focus:ring focus:ring-lime-400 focus:border-lime-400 invalid:text-pink-500 invalid:focus:ring-pink-600 invalid:focus:border-pink-500 peer" type="email" name="" id="" placeholder="email" required >
+                
+                <p class="text-sm m-1 text-pink-700 invisible peer-invalid:visible">Email tidak valid</p>
+            </label>
+        </form>
+      
+    </div>
+
+    <hr class="my-10">
+
+    <div class="h-40 w-40 bg-sky-500 mx-auto rounded-xl hover:scale-125 hover: rotate-45"></div>
+    <script>
+        const  cekbox = document.querySelector('#toggle');
+        const html = document.querySelector('html');
+
+        cekbox.addEventListener('click', function() {
+            cekbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+        });
+    </script>
+</body>
+</html>
